@@ -167,8 +167,15 @@
 //===========================================================================
 // Sidewinder X1 Options - Select 'Arduino Mega 2560' from Tools > Board
 //===========================================================================
+//#define SIDEWINDER_X1
 
-//Use Unified 2.0 for this machine - Go to https://UF2.TH3DStudio.com
+// NOTE: The Sidewinder X1 is ONLY compatible with our firmware once you have installed the LCD conversion kit
+// the stock LCD is not supported due to closed source firmware limitations on it.
+// You can get the LCD conversion kit here: https://www.th3dstudio.com/product/evonvo-artillery-sidewinder-x1-lcd-conversion-kit/
+
+// EZABL Probe Mounts
+//#define SIDEWINDER_X1_OEM //NOT FINISHED YET. WILL BE RELEASED AT A LATER DATE.
+//#define CUSTOM_PROBE
 
 //===========================================================================
 // ***********************     ANYCUBIC PRINTERS     ************************
@@ -189,14 +196,34 @@
 //===========================================================================
 // Creality CR-10 Options - Select 'Sanguino 1284P' from Tools > Board
 //===========================================================================
+//#define CR10
+//#define CR10_MINI
+//#define CR10_S4
+//#define CR10_S5
 
-//Use Unified 2.0 for this machine - Go to https://UF2.TH3DStudio.com
+// If you are using our EZOut V1/V2 (connects to LCD header) filament sensor kit please follow the install guide
+// and then uncomment the #define EZOUT_ENABLE line below.
+// Do NOT ever connect our filament sensor without the supplied adapter board.
+//#define EZOUT_ENABLE
+
+// EZABL Probe Mounts
+//#define CR10_OEM
+//#define CR10_VOLCANO
+//#define CR10_V6HEAVYDUTY
+//#define CR10_FANG
+//#define TM3DAERO
+//#define TM3DAERO_EXTENDED
+//#define PETSFANG //This is the RIGHT mounted version - if using the left mount please use the CUSTOM_PROBE option.
+//#define CUSTOM_PROBE
 
 //===========================================================================
 // Creality CR-10 V2 Options - Select 'Arduino Mega 2560' from Tools > Board
 //===========================================================================
+//#define CR10_V2
 
-//Use Unified 2.0 for this machine - Go to https://UF2.TH3DStudio.com
+// EZABL Probe Mounts
+//#define CR10V2_OEM
+//#define CUSTOM_PROBE
 
 //===========================================================================
 // Creality CR-10S Options - Select 'Arduino Mega 2560' from Tools > Board
@@ -314,15 +341,29 @@
 //===========================================================================
 // Creality Ender 2 Options - Select 'Sanguino 1284p' from Tools > Board
 //===========================================================================
+//#define ENDER2
 
-//Use Unified 2.0 for this machine - Go to https://UF2.TH3DStudio.com
+// If you are using our EZOut V2 (connects to the LCD header & connect the 2 pin connector to the "Check" header to the right of the LCD connection) filament sensor kit please follow the install guide
+// and then uncomment the #define EZOUTV2_ENABLE line below. Do NOT ever connect our filament sensor without the supplied adapter board.
+//#define EZOUTV2_ENABLE
+
+// EZABL Probe Mounts (Ender 2 can use the same mounts as CR-10, Ender 2 Specific mounts minimize distance from probe to nozzle for max probing area)
+// If you have issues with the non-Ender 2 mounts then please print them off and switch to one of them before contacting support. 
+// This is because the probeable area on the non-Ender 2 mounts is too small typically to get a good result.
+//#define ENDER2_OEM
+//#define ENDER2_V6
+//#define CR10_OEM
+//#define CR10_VOLCANO
+//#define CR10_V6HEAVYDUTY
+//#define TM3DAERO
+//#define TM3DAERO_EXTENDED
+//#define PETSFANG  //This is the RIGHT mounted version - if using the left mount please use the CUSTOM_PROBE option.
+//#define CUSTOM_PROBE
 
 //===========================================================================
 // Creality Ender 3/3 Pro Options - Select 'Sanguino 1284p' from Tools > Board
 //===========================================================================
-
-//Use Unified 2.0 for this machine when using the "Melzi" board - Go to https://UF2.TH3DStudio.com
-// If you are using the CR-10S Dual Board still use this firmware. We will port the dual board over to Unified 2 in the future.
+#define ENDER3
 
 // If you are using our EZOut V1/V2 (connected to LCD header) filament sensor kit please follow the install guide
 // and then uncomment the #define EZOUT_ENABLE line below.
@@ -390,9 +431,7 @@
 //===========================================================================
 // Creality Ender 5 Options - Select 'Sanguino 1284p' from Tools > Board
 //===========================================================================
-
-//Use Unified 2.0 for this machine when using the "Melzi" board - Go to https://UF2.TH3DStudio.com
-// If you are using the CR-10S Dual Board still use this firmware. We will port the dual board over to Unified 2 in the future.
+//#define ENDER5
 
 // If you are using our EZOut V1/V2 (connected to LCD header) filament sensor kit please follow the install guide
 // and then uncomment the #define EZOUT_ENABLE line below.
@@ -620,6 +659,28 @@
 //#define TORNADO_QUIET
 
 //===========================================================================
+// *************************     TH3D PRINTERS      *************************
+//===========================================================================
+
+//===========================================================================
+// TH3D Alpha EZ300 Options - Select Arduino Mega 2560 from Tools > Board
+//===========================================================================
+//#define TH3D_EZ300
+
+// EZABL Probe Mounts
+//#define EZ300_OEM_MOUNT
+
+// The Alpha X Carriage is 100% compatible with the Creality printer mounts.
+//#define CR10_OEM
+//#define CR10_VOLCANO
+//#define CR10_V6HEAVYDUTY
+//#define CR10_FANG
+//#define TM3DAERO
+//#define TM3DAERO_EXTENDED
+//#define PETSFANG //This is the RIGHT mounted version - if using the left mount please use the CUSTOM_PROBE option.
+//#define CUSTOM_PROBE
+
+//===========================================================================
 // *************************    TRONXY PRINTERS     *************************
 //===========================================================================
 
@@ -686,17 +747,14 @@
 // Patreon Link: https://www.patreon.com/join/andrivet
 
 //===========================================================================
-// Wanhao i3 MINI (V1/V2) Options - Select 'Arduino Mega 2560' from Tools > Board
+// Wanhao i3 MINI Options - Select 'Arduino Mega 2560' from Tools > Board
 //===========================================================================
 //#define WANHAO_I3MINI
-//#define WANHAO_I3MINI_V2
 
 // EZABL Probe Mounts
 //#define WANHAO_I3MINI_OEM
 //#define WANHAO_I3MINI_OEM_EZABLMINI
 //#define CUSTOM_PROBE
-
-// If you have the V1 and you've added a heated bed, just uncomment the V2 option
 
 //===========================================================================
 // Wanhao D6 Options - Select 'Arduino Mega 2560' from Tools > Board
@@ -710,21 +768,6 @@
 
 // EZABL Probe Mounts
 //#define WANHAO_D6_OEM
-//#define CUSTOM_PROBE
-
-//===========================================================================
-// ************************    ZONESTAR PRINTERS     ************************
-//===========================================================================
-
-//===========================================================================
-// Zonestar Z5F Options - Select 'Arduino Mega 2560' from Tools > Board
-//===========================================================================
-//#define ZONESTAR_Z5F
-
-//Stock ABL Option
-//#define ZONESTAR_Z5F_STOCK_ABL
-
-// EZABL Probe Mounts
 //#define CUSTOM_PROBE
 
 //===========================================================================
@@ -962,10 +1005,10 @@
 //#define FAN_FIX
 
 // Use your own printer name
-//#define USER_PRINTER_NAME "CHANGE ME" 
+#define USER_PRINTER_NAME "Ender 3 PRO" 
 
 // If your printer is homing to the endstops hard uncomment this to change the homing speed/divisor to make it less aggressive.
-//#define SLOWER_HOMING
+#define SLOWER_HOMING
 
 // Using a Creality Silent Board? Enable the below option to set the correct driver setting for those boards
 //#define TMC_CREALITY_BOARD
@@ -1019,7 +1062,7 @@
 // Mesh Bed Leveling Documentation: http://marlinfw.org/docs/gcode/G029-mbl.html If used with a 1284P board the bootscreen will be disabled to save space.
 // NOTE: This is not supported on the Wanhao i3 Plus due to the LCD limitations.
 // NOTE: If you want to automate the leveling process our EZABL kits do this for you. Check them out here: http://EZABL.TH3DStudio.com
-//#define MANUAL_MESH_LEVELING
+#define MANUAL_MESH_LEVELING
 
 // POWER LOSS RECOVERY -----------------------------
 // Continue after Power-Loss feature will store the current state to the SD Card at the start of each layer
@@ -1053,7 +1096,7 @@
 
 #define LCD_LANGUAGE en
 
-#define UNIFIED_VERSION "TH3D U1.R2.B5"
+#define UNIFIED_VERSION "TH3D U1.R2.B3"
 #include "Configuration_backend.h"
 
 #endif // CONFIGURATION_H

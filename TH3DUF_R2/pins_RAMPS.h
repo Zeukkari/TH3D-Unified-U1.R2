@@ -97,14 +97,8 @@
 #else
   #define Y_MAX_PIN        15
 #endif
-
-#if ENABLED(ZONESTAR_Z5F_STOCK_ABL)
-  #define Z_MIN_PIN          19 //18
-  #define Z_MAX_PIN          18 //19
-#else
-  #define Z_MIN_PIN          18
-  #define Z_MAX_PIN          19
-#endif
+#define Z_MIN_PIN          18
+#define Z_MAX_PIN          19
 
 //
 // Z Probe (when not Z_MIN_PIN)
